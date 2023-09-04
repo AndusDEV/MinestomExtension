@@ -1,5 +1,5 @@
 {
-  "entrypoint": "com.example.extension.ExampleExtension",
-  "name": "ExampleExtension",
+  "entrypoint": "dev.andus.playerutils.PlayerUtils",
+  "name": "PlayerUtils",
   "version": "1.0.0"
 }

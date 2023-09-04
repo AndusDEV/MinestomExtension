@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.example'
+group 'dev.andus.playerutils'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -11,5 +11,5 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.Minestom:Minestom:-SNAPSHOT'
+    implementation 'com.github.Minestom:Minestom:3645d4311d'
 }
