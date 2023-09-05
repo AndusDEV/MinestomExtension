@@ -1,5 +1,6 @@
 package dev.andus.playerutils.commands;
 
+import dev.andus.playerutils.Utils;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
@@ -28,9 +29,9 @@ public class MsgCommand extends Command {
         }
 
         String targetName = args[1];
-        Player target = findPlayerByName(targetName);
+        Player target = Utils.findPlayerByName(targetName);
         if (target == null) {
-            player.sendMessage("§cPlayer not found: §c§l" + targetName);
+            player.sendMessage("§cPlayer not found: §l" + targetName);
             return;
         }
 
@@ -42,11 +43,5 @@ public class MsgCommand extends Command {
 
         player.sendMessage("§7[§b§lYou §7-> §3" + target.getUsername() + "§7] §f" + message);
         target.sendMessage("§7[§3" + player.getUsername() + " §7-> §b§lYou§7] §f" + message);
-    }
-
-    private Player findPlayerByName(String name) {
-        Collection<Player> onlinePlayers = MinecraftServer.getConnectionManager().getOnlinePlayers();
-        for (Player player : onlinePlayers) { if (player.getUsername().equalsIgnoreCase(name)) { return player; } }
-        return null;
     }
 }
